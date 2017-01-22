@@ -1,0 +1,116 @@
+
+/* CSS file for Module3 Solution by ewkueffer, 22.01.2017*/
+
+/********** Base styles **********/
+* {
+  box-sizing: border-box;
+  
+}
+body {
+  font-family: Helvetica;
+  font-size: 16px;
+}
+
+/** HEADER **/
+#header-nav {
+  background-color:  #BDB4A7; /* light grey*/
+  border-radius: 0;
+  border: 0px solid black;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+    height: 60px;
+}
+
+.navbar-brand h1 { /* Food, LLC name */
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .95;
+  color: black;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 2px solid black;
+}
+
+.navbar-header button.navbar-toggle:hover {
+   border: 2px solid white;
+}
+
+.navbar-header button.navbar-toggle:hover .icon-bar {
+   border: 2px solid white;
+}
+
+/*.navbar-header button.navbar-toggle:hover, .navbar-header + .icon-bar:hover{
+   border: 2px solid white;
+}
+*/
+
+
+h2 {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 1.75em;
+
+}
+
+p { 
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  color: black;
+}
+
+.section {
+	background-color: #BDB4A7; /* light grey*/
+	margin: 10px;
+	border: 1px solid black;
+}
+
+#chicken, #beef, #sushi {
+	float: right;
+	clear: left;
+	width: 120px;
+	border: 1px solid black;
+	padding: 5px 0px 5px 0px;
+	margin: 0px;
+ 	text-align: center;
+ 	font-size: 1.25em;
+ 	font-weight: bold;
+}
+
+p.thetext {
+	clear: right;
+	padding: 10px;
+	height: 127px;
+	overflow: hidden;
+}
+
+#chicken {
+	color: black;
+	background-color: pink;
+}
+
+#beef {
+	color: white;
+	background-color: red;
+}
+
+#sushi {
+	color: black;
+	background-color: #DDBD5C;
+}
+
+
+/* Simple Responsive Framework. */
+.row {
+  width: 100%;
+}
+
+
