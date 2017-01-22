@@ -18,7 +18,7 @@ body {
   border: 0px solid black;
   border-top-width: 2px;
   border-bottom-width: 2px;
-    height: 60px;
+ /*   height: 60px; */
 }
 
 .navbar-brand h1 { /* Food, LLC name */
@@ -28,33 +28,86 @@ body {
   margin-bottom: 0;
   line-height: .95;
   color: black;
+  padding-left: 50px;
 }
 .navbar-brand a:hover, .navbar-brand a:focus {
   text-decoration: none;
 }
-
-
 .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
   border: 2px solid black;
 }
 
-.navbar-header button.navbar-toggle:hover {
+.navbar-header button.navbar-toggle:hover, .navbar-header button.navbar-toggle:focus{
    border: 2px solid white;
 }
 
-.navbar-header button.navbar-toggle:hover .icon-bar {
+.navbar-header button.navbar-toggle:hover .icon-bar, .navbar-header button.navbar-toggle:focus .icon-bar{
    border: 2px solid white;
 }
 
-/*.navbar-header button.navbar-toggle:hover, .navbar-header + .icon-bar:hover{
-   border: 2px solid white;
-}
-*/
 
+#nav-list {
+  margin: 0;
+ /* margin-top: 10px; */
+} 
+#nav-list a {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 5px;
+  margin: 0;
+  color: black;
+  font-weight: bold;
+}
+#nav-list a:hover {
+  background-color:  #BDB4A7; /* light grey*/
+}
+/*.navbar-header button.navbar-toggle {
+  clear: both;
+} */
+.collapse li hr {
+  height: 2px;
+  margin: 0;
+  border-color: black;
+}
+
+#collapsable-nav, #hold_collapse {
+  padding: 0;
+}
+
+.navbar-default .navbar-collapse{
+  border-color: black;
+}
+
+.navbar .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* END HEADER */
+
+/* HOME PAGE */
+#main-content{
+  border 4px;
+ /* background-color: green; */
+}
+
+.container .jumbotron {
+  box-shadow: 20 40 50px #3F0C1F;
+  border: 2px solid #3F0C1F;
+  margin: 20px;
+}
+
+
+
+/* HOME PAGE 
+.main_title {
+    background: yellow;
+    float: left;
+ 
+  }*/
 
 h2 {
   margin-bottom: 15px;
-  margin-top: 15px;
+  margin-top: 0px;
   text-align: center;
   font-size: 1.75em;
 
