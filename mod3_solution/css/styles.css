@@ -44,7 +44,9 @@ body {
 .navbar-header button.navbar-toggle:hover .icon-bar, .navbar-header button.navbar-toggle:focus .icon-bar{
    border: 2px solid white;
 }
-
+.navbar-header button.navbar-toggle{
+  margin-right: 40px;
+}
 
 #nav-list {
   margin: 0;
@@ -57,9 +59,10 @@ body {
   margin: 0;
   color: black;
   font-weight: bold;
+  background-color:  #d6d6c2;
 }
 #nav-list a:hover {
-  background-color:  #BDB4A7; /* light grey*/
+  background-color:  #eaeae1; /* very light grey*/
 }
 /*.navbar-header button.navbar-toggle {
   clear: both;
@@ -108,15 +111,17 @@ body {
 h2 {
   margin-bottom: 15px;
   margin-top: 0px;
-  text-align: center;
+ /* text-align: center; */
   font-size: 1.75em;
 
 }
 
 p { 
-  width: 100%;
+ /* width: 90%; 
   margin-right: auto;
-  margin-left: auto;
+  margin-left: auto; */
+  margin-left: 20px;
+  margin-right: 20px;
   color: black;
 }
 
@@ -124,9 +129,17 @@ p {
 	background-color: #BDB4A7; /* light grey*/
 	margin: 10px;
 	border: 1px solid black;
+  height: 1000px;
+  overflow: auto;
 }
 
+
 #chicken, #beef, #sushi {
+  font-size: 1.2em;
+  padding-top: 5px;
+  font-weight: bold;
+
+  /*
 	float: right;
 	clear: left;
 	width: 120px;
@@ -136,15 +149,15 @@ p {
  	text-align: center;
  	font-size: 1.25em;
  	font-weight: bold;
-}
+} */
 
 p.thetext {
 	clear: right;
 	padding: 10px;
-	height: 127px;
-	overflow: hidden;
+/*	height: 127px; */
+	overflow: scroll;
 }
-
+/*
 #chicken {
 	color: black;
 	background-color: pink;
@@ -159,7 +172,7 @@ p.thetext {
 	color: black;
 	background-color: #DDBD5C;
 }
-
+*/
 
 /* Simple Responsive Framework. */
 .row {
