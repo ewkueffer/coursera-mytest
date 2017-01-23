@@ -18,7 +18,7 @@ body {
   border: 0px solid black;
   border-top-width: 2px;
   border-bottom-width: 2px;
- /*   height: 60px; */
+ /*   height: 60px; avoid this because the height must expand due to the dropdown*/
 }
 
 .navbar-brand h1 { /* Food, LLC name */
@@ -50,10 +50,8 @@ body {
 
 #nav-list {
   margin: 0;
- /* margin-top: 10px; */
 } 
 #nav-list a {
-  text-align: center;
   font-size: 1.2em;
   padding: 5px;
   margin: 0;
@@ -64,9 +62,6 @@ body {
 #nav-list a:hover {
   background-color:  #eaeae1; /* very light grey*/
 }
-/*.navbar-header button.navbar-toggle {
-  clear: both;
-} */
 .collapse li hr {
   height: 2px;
   margin: 0;
@@ -90,36 +85,16 @@ body {
 /* HOME PAGE */
 #main-content{
   border 4px;
- /* background-color: green; */
 }
-
-.container .jumbotron {
-  box-shadow: 20 40 50px #3F0C1F;
-  border: 2px solid #3F0C1F;
-  margin: 20px;
-}
-
-
-
-/* HOME PAGE 
-.main_title {
-    background: yellow;
-    float: left;
- 
-  }*/
 
 h2 {
   margin-bottom: 15px;
   margin-top: 0px;
- /* text-align: center; */
   font-size: 1.75em;
 
 }
 
 p { 
- /* width: 90%; 
-  margin-right: auto;
-  margin-left: auto; */
   margin-left: 20px;
   margin-right: 20px;
   color: black;
@@ -138,45 +113,11 @@ p {
   font-size: 1.2em;
   padding-top: 5px;
   font-weight: bold;
-
-  /*
-	float: right;
-	clear: left;
-	width: 120px;
-	border: 1px solid black;
-	padding: 5px 0px 5px 0px;
-	margin: 0px;
- 	text-align: center;
- 	font-size: 1.25em;
- 	font-weight: bold;
-} */
-
-p.thetext {
-	clear: right;
-	padding: 10px;
-/*	height: 127px; */
-	overflow: scroll;
 }
-/*
-#chicken {
-	color: black;
-	background-color: pink;
-}
-
-#beef {
-	color: white;
-	background-color: red;
-}
-
-#sushi {
-	color: black;
-	background-color: #DDBD5C;
-}
-*/
 
 /* Simple Responsive Framework. */
 .row {
   width: 100%;
 }
 
-
+/* END HOME PAGE */
