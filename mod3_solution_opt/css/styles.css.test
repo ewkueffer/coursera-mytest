@@ -1,0 +1,32 @@
+
+/* CSS file for Module3 Solution by ewkueffer, 22.01.2017*/
+
+/********** Base styles **********/
+
+
+
+
+/* END HEADER */
+
+/* HOME PAGE */
+
+
+.section{
+  background-color:gray;
+  padding: 10px 10px 10px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+/* Simple Responsive Framework. 
+.row {
+  width: 100%;
+} 
+}*/
+
+ 
+/* END HOME PAGE */

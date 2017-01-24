@@ -1,0 +1,116 @@
+
+/* CSS file for Module3 Solution by ewkueffer, 22.01.2017*/
+
+/********** Base styles **********/
+* {
+  box-sizing: border-box;
+  
+}
+body {
+  font-family: Helvetica;
+  font-size: 16px;
+}
+
+/** HEADER **/
+#header-nav {
+  background-color:  #BDB4A7; /* light grey*/
+  border-radius: 0;
+  border: 0px solid black;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+ /*   height: 60px; avoid this because the height must expand due to the dropdown*/
+}
+
+.navbar-brand h1 { /* Food, LLC name */
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .95;
+  color: black;
+  padding-left: 50px;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 2px solid black;
+}
+
+.navbar-header button.navbar-toggle:hover, .navbar-header button.navbar-toggle:focus{
+   border: 2px solid white;
+}
+
+.navbar-header button.navbar-toggle:hover .icon-bar, .navbar-header button.navbar-toggle:focus .icon-bar{
+   border: 2px solid white;
+}
+.navbar-header button.navbar-toggle{
+  margin-right: 40px;
+}
+
+#nav-list {
+  margin: 0;
+} 
+#nav-list a {
+  font-size: 1.2em;
+  padding: 5px;
+  margin: 0;
+  color: black;
+  font-weight: bold;
+  background-color:  #d6d6c2;
+}
+#nav-list a:hover {
+  background-color:  #eaeae1; /* very light grey*/
+}
+.collapse li hr {
+  height: 2px;
+  margin: 0;
+  border-color: black;
+}
+
+#collapsable-nav, #hold_collapse {
+  padding: 0;
+}
+
+.navbar-default .navbar-collapse{
+  border-color: black;
+}
+
+.navbar .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* END HEADER */
+
+/* HOME PAGE */
+h2 {
+  margin-bottom: 15px;
+  margin-top: 0px;
+  font-size: 1.75em;
+}
+
+p { 
+  margin-left: 20px;
+  margin-right: 20px;
+  color: black;
+}
+
+.section {
+	background-color: #BDB4A7; /* light grey*/
+	margin: 10px;
+	border: 1px solid black;
+  height: 700px;
+  position: relative;
+  width: 98%;
+  overflow: auto;
+
+}
+
+#chicken, #beef, #sushi {
+  font-size: 1.2em;
+  padding-top: 5px;
+  font-weight: bold;
+}
+ 
+
+/* END HOME PAGE */
