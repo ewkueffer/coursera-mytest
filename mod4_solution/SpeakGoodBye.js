@@ -25,10 +25,16 @@
 (function(window){
 
 	var byeSpeaker = {};
+
 	var speakWord = "Good Bye";
+	var speakphrase;
 	byeSpeaker.speak = function (name) {
-		console.log(speakWord + " " + name);
+		speakphrase = speakWord + " " + name;
+		console.log(speakphrase);
+		return speakphrase;
 	}
+
 	window.byeSpeaker = byeSpeaker;
+	//console.log("byeSpeaker);
 
 })(window);
