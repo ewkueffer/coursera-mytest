@@ -4,7 +4,7 @@
 angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
-.constant('ApiBasePath', "http://davids-restaurant.herokuapp.com")
+.constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
 .directive('foundItems', FoundItemsDirective);
 
 function FoundItemsDirective() {
@@ -44,7 +44,7 @@ function NarrowItDownController(MenuSearchService, $timeout) {
       $timeout(function () {
         console.log("timeout");
         processDisplayWarning();
-      }, 1000);
+      }, 2000);
     } else {
       displayWarning();
     }
