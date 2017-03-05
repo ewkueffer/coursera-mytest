@@ -1,0 +1,8 @@
+<h3 class="titleOfList">List of items matched</h3>
+<ol>
+  <li ng-repeat="item in ctl.found">
+    <button ng-click="ctl.onRemove({index: $index});">Don't want this one!</button>
+   {{ item.name }}, ({{ item.short_name }}), {{ item.description }}
+  </li>
+</ol>
+<div class="warn" ng-if="ctl.showWarn">Nothing found</div>
