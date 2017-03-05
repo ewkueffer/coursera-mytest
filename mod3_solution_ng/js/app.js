@@ -4,17 +4,81 @@
 angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
-.constant('ApiBasePath', "http://davids-restaurant.herokuapp.com");
+.constant('ApiBasePath', "http://davids-restaurant.herokuapp.com")
+.directive('foundItems', FoundItemsDirective);
 
+function FoundItemsDirective() {
+  var ddo = {
+    templateUrl: 'itemsFoundList.html',
+    scope: {
+      found: '<',
+      showWarn: '<show',
+      onRemove: '&'
+    },
+    controller: DummyDirectiveController,
+    controllerAs: 'ctl',
+    bindToController: true,
+  };
+  return ddo;
+}
 
-NarrowItDownController.$inject = ['MenuSearchService'];
-function NarrowItDownController(MenuSearchService) {
+function DummyDirectiveController() {
+}
+
+NarrowItDownController.$inject = ['MenuSearchService', '$timeout'];
+function NarrowItDownController(MenuSearchService, $timeout) {
   var ctl = this;
 
-  ctl.test = function(){
-    console.log("started test ... ")
-    MenuSearchService.getMatchedMenuItems("chicken");
+  ctl.searchTerm = "";
+  // ctl.found = [{short_name: "A", name: "Any", description: "..."}, {short_name: "B", name: "Bla", description: "..."}];
+  ctl.found = [];
+  ctl.showWarn = false;
+
+  ctl.searchMenu = function(){
+    console.log("started searchMenu ... for searchTerm: " + ctl.searchTerm);
+    ctl.removeAllItems();
+    if (ctl.searchTerm != ""){
+      removeWarning();
+      ctl.found = MenuSearchService.getMatchedMenuItems(ctl.searchTerm);
+      console.log("finished to search: [" + ctl.found + "]");
+      $timeout(function () {
+        console.log("timeout");
+        processDisplayWarning();
+      }, 1000);
+    } else {
+      displayWarning();
+    }
   };
+
+  ctl.removeItem = function (itemIndex) {
+    console.log("remove itemIndex: "+ itemIndex);
+    MenuSearchService.removeItem(itemIndex);
+    processDisplayWarning();
+  };
+
+  ctl.removeAllItems = function (){
+    console.log("remove all");
+    MenuSearchService.removeAllItems();
+  }
+
+  function processDisplayWarning(){
+    console.log("processDisplayWarning");
+    if (MenuSearchService.isFoundItemsEmpty()){
+      displayWarning();
+    } else {
+      removeWarning();
+    }
+  }
+
+  function displayWarning() {
+    console.log("displayWarning");
+    ctl.showWarn = true;
+  }
+
+  function removeWarning() {
+    console.log("removeWarning");
+    ctl.showWarn = false;
+  }
 }
 
 MenuSearchService.$inject = ['$http', 'ApiBasePath'];
@@ -52,11 +116,24 @@ function MenuSearchService($http, ApiBasePath) {
     return foundItems;
   }
 
+  service.removeItem = function (itemIndex) {
+    foundItems.splice(itemIndex, 1);
+  };
 
+  service.removeAllItems = function () {
+    //  foundItems = [];
+    while (foundItems.length > 0){
+      foundItems.pop();
+    }
+  };
 
+  service.getFoundItems = function () {
+    return foundItems;
+  };
+
+  service.isFoundItemsEmpty = function () {
+    return foundItems.length == 0;
+  }
 }
-
-
-
 
 })();

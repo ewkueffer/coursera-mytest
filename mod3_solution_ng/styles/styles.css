@@ -50,3 +50,10 @@ input[type="text"] {
     transform: rotate(360deg);
   }
 }
+.titleOfList {
+  text-align: left;
+}
+.warn {
+  color: red;
+  font-weight: bold;
+}
