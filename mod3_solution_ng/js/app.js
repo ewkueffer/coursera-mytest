@@ -16,14 +16,61 @@ function FoundItemsDirective() {
       showWarn: '<show',
       onRemove: '&'
     },
-    controller: DummyDirectiveController,
+    controller: WarningDirectiveController,
     controllerAs: 'ctl',
     bindToController: true,
+    link: WarningDirectiveLink
   };
   return ddo;
 }
 
-function DummyDirectiveController() {
+function WarningDirectiveLink(scope, element, attrs, controller) {
+  console.log("Controller instance is: ", controller);
+  console.log("Element is: ", element);
+
+  scope.$watch('ctl.listEmpty()', function (newValue, oldValue) {
+    console.log("Old value: ", oldValue);
+    console.log("New value: ", newValue);
+
+    if (newValue === true) {
+      displayWarning();
+    } else {
+      removeWarning();
+    }
+  });
+  function displayWarning() {
+    console.log("displayWarning");
+    // Using Angluar jqLite
+    // var warningElem = element.find("div");
+    // warningElem.css('display', 'block');
+    // If jQuery included before Angluar
+    var warningElem = element.find("div.warn");
+    warningElem.slideDown(10);
+  }
+
+  function removeWarning() {
+    console.log("removeWarning");
+    // Using Angluar jqLite
+    // var warningElem = element.find("div");
+    // warningElem.css('display', 'none');
+    // If jQuery included before Angluar
+    var warningElem = element.find("div.warn");
+    warningElem.slideUp(10);
+  }
+}
+
+function WarningDirectiveController() {
+  var ctl = this;
+  ctl.listEmpty = function () {
+    console.log("listEmpty? ctl.showWarn: " + ctl.showWarn + " ctl.found: " + ctl.found);
+    if (!ctl.showWarn ){ // be sure that it will not display any warning too early
+      return false;
+    } else if (ctl.found != null && ctl.found != undefined && ctl.found.length > 0){
+      return false;
+    } else {
+      return true;
+    }
+  };
 }
 
 NarrowItDownController.$inject = ['MenuSearchService', '$timeout'];
@@ -34,27 +81,25 @@ function NarrowItDownController(MenuSearchService, $timeout) {
   // ctl.found = [{short_name: "A", name: "Any", description: "..."}, {short_name: "B", name: "Bla", description: "..."}];
   ctl.found = [];
   ctl.showWarn = false;
+  console.log("started NarrowItDownController");
 
   ctl.searchMenu = function(){
+    enableWarnings();
     console.log("started searchMenu ... for searchTerm: " + ctl.searchTerm);
     ctl.removeAllItems();
     if (ctl.searchTerm != ""){
-      removeWarning();
       ctl.found = MenuSearchService.getMatchedMenuItems(ctl.searchTerm);
       console.log("finished to search: [" + ctl.found + "]");
-      $timeout(function () {
-        console.log("timeout");
-        processDisplayWarning();
-      }, 2000);
-    } else {
-      displayWarning();
+      // $timeout(function () {
+      //   processDisplayWarning();
+      // }, 2000);
     }
   };
 
   ctl.removeItem = function (itemIndex) {
     console.log("remove itemIndex: "+ itemIndex);
     MenuSearchService.removeItem(itemIndex);
-    processDisplayWarning();
+    // processDisplayWarning();
   };
 
   ctl.removeAllItems = function (){
@@ -62,23 +107,8 @@ function NarrowItDownController(MenuSearchService, $timeout) {
     MenuSearchService.removeAllItems();
   }
 
-  function processDisplayWarning(){
-    console.log("processDisplayWarning");
-    if (MenuSearchService.isFoundItemsEmpty()){
-      displayWarning();
-    } else {
-      removeWarning();
-    }
-  }
-
-  function displayWarning() {
-    console.log("displayWarning");
+  function enableWarnings(){ // the first time
     ctl.showWarn = true;
-  }
-
-  function removeWarning() {
-    console.log("removeWarning");
-    ctl.showWarn = false;
   }
 }
 
