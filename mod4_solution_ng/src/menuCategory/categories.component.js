@@ -3,7 +3,7 @@
 
 angular.module('MenuApp')
 .component('catList', {
-  templateUrl: 'src/menuList/templates/categories.template.html',
+  templateUrl: 'src/menuCategory/categories.template.html',
   bindings: {
     items: '<'
   }

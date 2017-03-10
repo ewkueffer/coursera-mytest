@@ -16,34 +16,33 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Home page
   .state('home', {
     url: '/',
-    templateUrl: 'src/menulist/templates/home.template.html'
+    templateUrl: 'src/home/home.template.html'
   })
   .state('categories', {
     url: '/categories',
-    templateUrl: 'src/menulist/templates/main-categories.template.html',
+    templateUrl: 'src/menuCategory/main-categories.template.html',
     controller: 'MainCategoriesController as categories',
     resolve: {
       items: ['MenuDataService', function (MenuDataService) {
         return MenuDataService.getAllCategories();
       }]
     }
-
   })
-// ;
+
   .state('items', {
     url: '/items/{categoryId}',
-    // url: '/items',
-    templateUrl: 'src/menulist/templates/main-items.template.html',
+    templateUrl: 'src/menuItem/main-items.template.html',
     controller: "ItemsController as items",
     resolve: {
       menuitems: ['$stateParams','MenuDataService',
       function ($stateParams,MenuDataService) {
         return MenuDataService.getItemsForCategory($stateParams.categoryId);
+      }],
+      shortcatname: ['$stateParams', function($stateParams) {
+        return {value: $stateParams.categoryId};
       }]
     }
-
   });
-
 }
 
 })();
