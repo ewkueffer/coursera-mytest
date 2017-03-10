@@ -37,6 +37,21 @@ function MenuDataService($http, ApiBasePath) {
   // };
 
   service.getItemsForCategory = function (categoryShortName) {
+    console.log("started getItemsForCategory ... categoryShortName: " + categoryShortName);
+    return $http({
+      method: "GET",
+      url: (ApiBasePath + "/menu_items.json"), ///menu_items.json?category=
+      params: {
+        category: categoryShortName
+      }
+    }).then(function (response){
+      console.log("length: " + response.data.menu_items.length);
+      console.log(response.data.menu_items[0]);
+      return response.data.menu_items;
+    }).catch(function (error) {
+      console.log("Something went wrong.");
+      console.log(response.data);
+    });
 
   };
 }

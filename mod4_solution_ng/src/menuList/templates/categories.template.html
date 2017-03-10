@@ -1,7 +1,12 @@
 <!-- <h3>Any thing</h3> -->
+<a ui-sref="items">test only</a>
 <ul>
   <!-- <li ng-repeat="item in $ctrl.categoryitems" ui-sref="mainList.itemDetail({itemId: $index})"> -->
-  <li ng-repeat="item in $ctrl.items">
+  <!-- <li ng-repeat="item in $ctrl.items"> -->
+  <li ng-repeat="item in $ctrl.items" ui-sref="items({categoryId: item.short_name})">
+  <!-- <li ng-repeat="item in $ctrl.items" ui-sref="items"> -->
     ({{ item.short_name }}) - {{ item.name }}
+    <!-- <a ui-sref="items">test only</a> -->
+    <!-- <a ui-sref="items({categoryId: item.short_name})">aaa</a> -->
   </li>
 </ul>
