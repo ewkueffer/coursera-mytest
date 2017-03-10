@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-angular.module('MenuApp')
+angular.module('Data')
 .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
 .service('MenuDataService', MenuDataService);
 

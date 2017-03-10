@@ -42,7 +42,13 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         return {value: $stateParams.categoryId};
       }]
     }
+  })
+  .state('items.itemDetail', {
+    url: '/item-detail/{itemId}',
+    templateUrl: 'src/menuItem/item-detail.template.html',
+    controller: "ItemDetailController as itemDetail"
   });
+
 }
 
 })();
