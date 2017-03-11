@@ -1,4 +1,4 @@
-(function () {
+(function () {  // By ewkueffer, 11.03.2017
 'use strict';
 
 angular.module('MenuApp')
@@ -28,13 +28,12 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       }]
     }
   })
-
   .state('items', {
     url: '/items/{categoryId}',
     templateUrl: 'src/menuItem/main-items.template.html',
     controller: "ItemsController as items",
     resolve: {
-      menuitems: ['$stateParams','MenuDataService',
+      menuItems: ['$stateParams','MenuDataService',
       function ($stateParams,MenuDataService) {
         return MenuDataService.getItemsForCategory($stateParams.categoryId);
       }],

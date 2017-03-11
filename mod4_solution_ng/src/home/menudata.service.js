@@ -23,19 +23,6 @@ function MenuDataService($http, ApiBasePath) {
     });
   }
 
-  // service.getAllCategoriesTest  = function () {
-  //   console.log("started getAllCategories faked...");
-  //   var items = [];
-  //   items.push({
-  //     name: "Sugar",
-  //     short_name: "s" });
-  //   items.push({
-  //     name: "Coffee",
-  //     short_name: "c" });
-  //     console.log("items loged: " + items[1].name);
-  //   return items;
-  // };
-
   service.getItemsForCategory = function (categoryShortName) {
     console.log("started getItemsForCategory ... categoryShortName: " + categoryShortName);
     return $http({
@@ -53,9 +40,19 @@ function MenuDataService($http, ApiBasePath) {
       console.log("Something went wrong.");
       console.log(response.data);
     });
-
-  };
+  }
+  // service.getAllCategoriesTest  = function () {
+  //   console.log("started getAllCategories faked...");
+  //   var items = [];
+  //   items.push({
+  //     name: "Sugar",
+  //     short_name: "s" });
+  //   items.push({
+  //     name: "Coffee",
+  //     short_name: "c" });
+  //     console.log("items loged: " + items[1].name);
+  //   return items;
+  // };
 }
-
 
 })();

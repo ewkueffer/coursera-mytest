@@ -4,13 +4,12 @@
 angular.module('Data')
 .controller('ItemsController', ItemsController);
 
-
-ItemsController.$inject = ['MenuDataService', 'menuitems', 'shortcatname'];
-function ItemsController(MenuDataService, menuitems, shortcatname) {
+ItemsController.$inject = ['MenuDataService', 'menuItems', 'shortcatname'];
+function ItemsController(MenuDataService, menuItems, shortcatname) {
   var items = this;
-  console.log("started ItemsController ...menuitems: " + menuitems);
-  items.menuitems = menuitems.menu_items;
-  items.catname = menuitems.category.name;
+  console.log("started ItemsController ...menuItems: " + menuItems);
+  items.menuItems = menuItems.menu_items;
+  items.catname = menuItems.category.name;
   items.shortcatname = shortcatname.value;
 }
 
