@@ -15,7 +15,7 @@ function MenuDataService($http, ApiBasePath) {
       method: "GET",
       url: (ApiBasePath + "/categories.json")
     }).then(function (response){
-      console.log(response.data[0]);
+      // console.log(response.data[0]);
       return response.data;
     }).catch(function (error) {
       console.log("Something went wrong.");
@@ -33,7 +33,6 @@ function MenuDataService($http, ApiBasePath) {
       }
     }).then(function (response){
       console.log("length: " + response.data.menu_items.length);
-      console.log(response.data.menu_items[0]);
       // return response.data.menu_items;
       return response.data;
     }).catch(function (error) {
