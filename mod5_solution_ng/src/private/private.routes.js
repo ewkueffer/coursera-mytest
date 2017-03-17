@@ -17,7 +17,10 @@
       })
       .state('private.signup', {
         url: '/private/sign-up',
-        templateUrl: 'src/private/sign-up/sign-up.html'
+        templateUrl: 'src/private/sign-up/sign-up.html',
+        controller: 'SignUpController'
+        ,
+        controllerAs: 'ctrl'
       })
       .state('private.myinfo', {
         url: '/private/my-info',
