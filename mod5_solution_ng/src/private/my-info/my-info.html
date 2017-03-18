@@ -1,1 +1,32 @@
-<h2>This is my-info html</h2>
+<div class="container" >
+  <div class="registered-info" ng-show= "$ctrl.user.email != undefined">
+    <h3>Registered Information</h3>
+    <div class="row">
+      <div class="col-sm-3">First Name:</div>
+      <div class="col-sm-9">{{ $ctrl.user.firstname }}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">Last Name:</div>
+      <div class="col-sm-9">{{ $ctrl.user.lastname }}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">Email:</div>
+      <div class="col-sm-9">{{ $ctrl.user.email }}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">Phone Number:</div>
+      <div class="col-sm-9">{{ $ctrl.user.phone }}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">Favorite Menu Id:</div>
+      <div class="col-sm-9">{{ $ctrl.user.menushortname }}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 favorite-menu">Favorite Menu:</div>
+    </div>
+    <my-info-comp menu-item="$ctrl.user.menuItem"></my-info-comp>
+  </div>
+  <div class="unregistered" ng-show= "$ctrl.user.email === undefined">
+    <a ui-sref="private.signup">Not Signed Up Yet. Sign up now!</a>
+  </div>
+</div>

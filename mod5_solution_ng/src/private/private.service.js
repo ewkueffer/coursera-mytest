@@ -7,14 +7,18 @@ angular.module('private')
 PrivateService.$inject = [];
 function PrivateService() {
   var service = this;
-  var userDataArray = [{firstName: 'Bob',
-                        lastName: 'Smith',
-                        email: 'bob@yyy.com',
-                        phone: '556667777',
-                        menushortname: 'S'}];
+  var userDataArray = [];
+  // var userDataArray = [{firstname: 'Bob',
+  //                       lastname: 'Smith',
+  //                       email: 'bob@yyy.com',
+  //                       phone: '556667777',
+  //                       menushortname: 'S'}];
 
   service.getUserData = function (email) {
     console.log("get userData for email: " + email);
+    if (email == undefined){
+      return userDataArray[0];
+    }
     for (var i=0; i <  userDataArray.length; i++){
       if (userDataArray[i].email === email) {
         return userDataArray[i];

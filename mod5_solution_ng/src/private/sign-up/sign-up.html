@@ -1,8 +1,6 @@
-<h2>This is my sign up html</h2>
-
 <div class="container">
   <fieldset>
-    <legend>Sign Up</legend>
+    <legend class="sign-up-legend">Sign Up</legend>
     <form name='regForm' novalidate>
       <label>First Name:<br>
         <input type="text" name="firstname" placeholder="Enter your firstname"
@@ -10,7 +8,7 @@
           required
           minlength="2"
           ng-maxlength="20">
-          {{ ctrl.user.firstname }}
+          <!-- {{ ctrl.user.firstname }} -->
           <span
             ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
             The firstname must be at least 2 characters long
@@ -25,7 +23,7 @@
           required
           minlength="2"
           ng-maxlength="20">
-          {{ ctrl.user.lastname }}
+          <!-- {{ ctrl.user.lastname }} -->
           <span
             ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
             The lastname must be at least 2 characters long
@@ -54,31 +52,32 @@
         <input type="text" name="menushortname" placeholder="Enter your favorite dish"
           ng-model="ctrl.user.menushortname"
           minlength="1"
-          pattern="([A-Z0-9]{1,})">
-          <span ng-if="regForm.menushortname.$invalid && regForm.menushortname.$touched">
-            Must be a menu short name as X12
+          required
+          pattern="(([A-Z]{1,2})([1-9]{1})([0-9]{0,1}))">
+
+          <span ng-if="regForm.menushortname.$invalid && regForm.menushortname.$touched && !ctrl.wrongshortname">
+            Must be a menu short name as C12, L1, SP7
           </span>
-          <span ng-if="regForm.menushortname.$touched && ctl.wrongshortname">
+          <span ng-if="regForm.menushortname.$touched && ctrl.wrongshortname">
             No such menu number exists
           </span>
-      </label> <br> <br>
-      <button
+
+      </label> <br>
+      <button name="submitbutton"
         ng-disabled="regForm.$invalid"
         ng-click="ctrl.submit()">Submit</button>
-
-        <div style="margin-top: 10px;">
-          Form valid? {{ regForm.$valid }}
-        </div>
+        <span ng-if="regForm.$submitted && !ctrl.wrongshortname && ctrl.reqCompleted">Your information has been saved</span>
     </form>
   </fieldset>
 
   <!-- <div id="info" ng-if="reg.completed"> -->
   <div id="info" >
-
     First Name: {{ ctrl.user.firstname}} <br>
     Last Name: {{ ctrl.user.lastname}} <br>
     Email: {{ ctrl.user.email}} <br>
     Phone: {{ ctrl.user.phone }} <br>
-    Menu Short Name: {{ ctrl.user.menushortname }}
+    Menu Short Name: {{ ctrl.user.menushortname }} <br>
+    wrongshortname: {{ ctrl.wrongshortname }} <br>
+    reqCompleted: {{ ctrl.reqCompleted }}
   </div>
 </div>

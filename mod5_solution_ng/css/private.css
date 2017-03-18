@@ -1,11 +1,30 @@
 .ng-touched.ng-valid {
-  border: 2px green solid;
+  border: 3px green solid;
 }
 
 .ng-touched.ng-invalid {
-  border: 2px red solid;
+  border: 3px red solid;
 }
 
 div fieldset form input {
   color: black;
+}
+
+div fieldset form button {
+  margin-top: 20px;
+  color: red;
+}
+
+.sign-up-legend {
+  color: white;
+  font-size: 1.3em;
+}
+
+.unregistered a {
+  font-size: 1.3em;
+}
+
+.favorite-menu {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
