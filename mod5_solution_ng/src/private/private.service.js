@@ -1,4 +1,4 @@
-(function () {
+(function () {   // by ewkueffer, 18.03.2017
 "use strict";
 
 angular.module('private')
@@ -28,8 +28,6 @@ function PrivateService() {
 
   service.setUserData = function (userData) {
     console.log("set userData: " + userData);
-    var found = false;
-    // if (oldUserData != undefined){
     for (var i=0; i <  userDataArray.length; i++){
       if (userDataArray[i].email === userData.email) {
         console.log("found user data, remove it first");

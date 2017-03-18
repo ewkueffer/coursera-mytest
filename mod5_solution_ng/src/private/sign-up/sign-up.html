@@ -1,6 +1,6 @@
 <div class="container">
   <fieldset>
-    <legend class="sign-up-legend">Sign Up</legend>
+    <legend class="sign-up-legend">Sign Up for the Newsletter</legend>
     <form name='regForm' novalidate>
       <label>First Name:<br>
         <input type="text" name="firstname" placeholder="Enter your firstname"
@@ -8,7 +8,6 @@
           required
           minlength="2"
           ng-maxlength="20">
-          <!-- {{ ctrl.user.firstname }} -->
           <span
             ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
             The firstname must be at least 2 characters long
@@ -23,7 +22,6 @@
           required
           minlength="2"
           ng-maxlength="20">
-          <!-- {{ ctrl.user.lastname }} -->
           <span
             ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
             The lastname must be at least 2 characters long
@@ -34,8 +32,8 @@
        </label> <br>
        <label>Email:<br>
         <input type="email" name="email" placeholder="Email"
-          ng-model="ctrl.user.email">
-          <!-- required> -->
+          ng-model="ctrl.user.email"
+          required>
           <span ng-if="regForm.email.$invalid && regForm.email.$touched">
             Must be a valid email address: handle@domain format
           </span>
@@ -70,8 +68,7 @@
     </form>
   </fieldset>
 
-  <!-- <div id="info" ng-if="reg.completed"> -->
-  <div id="info" >
+  <!-- <div id="info" >
     First Name: {{ ctrl.user.firstname}} <br>
     Last Name: {{ ctrl.user.lastname}} <br>
     Email: {{ ctrl.user.email}} <br>
@@ -79,5 +76,5 @@
     Menu Short Name: {{ ctrl.user.menushortname }} <br>
     wrongshortname: {{ ctrl.wrongshortname }} <br>
     reqCompleted: {{ ctrl.reqCompleted }}
-  </div>
+  </div> -->
 </div>

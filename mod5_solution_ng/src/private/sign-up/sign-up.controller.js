@@ -36,10 +36,7 @@ function SignUpController( PrivateService, MenuService) {
       $ctrl.wrongshortname = true;
       $ctrl.reqCompleted = true;
     });
-
   }
-
-
 
 }
 

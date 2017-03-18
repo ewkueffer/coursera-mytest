@@ -31,9 +31,7 @@
             return PrivateService.getUserData();
           }]
         }
-
     });
-
 }
 
 })();

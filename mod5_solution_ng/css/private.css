@@ -6,6 +6,20 @@
   border: 3px red solid;
 }
 
+fieldset {
+  display: block;
+   border-width: 2px;
+   border-style: groove;
+   border-color: threedface;
+   border-image: initial;
+   padding: 20px;
+   max-width: 600px;
+}
+
+legend {
+  border-bottom: 0px;
+  width: auto;
+}
 div fieldset form input {
   color: black;
 }
