@@ -13,7 +13,7 @@ angular.module('private')
 MyInfoComponentController.$inject = ['ApiPath'];
 function MyInfoComponentController(ApiPath) {
   var $ctrl = this;
-  console.log("MyInfoComponentController stated");
+  console.log("MyInfoComponentController started");
   $ctrl.basePath = ApiPath;
 }
 

@@ -8,12 +8,12 @@
 
 fieldset {
   display: block;
-   border-width: 2px;
-   border-style: groove;
-   border-color: threedface;
-   border-image: initial;
-   padding: 20px;
-   max-width: 600px;
+  border-width: 2px;
+  border-style: groove;
+  border-color: threedface;
+  border-image: initial;
+  padding: 20px;
+  max-width: 600px;
 }
 
 legend {
@@ -26,7 +26,12 @@ div fieldset form input {
 
 div fieldset form button {
   margin-top: 20px;
+  margin-bottom: 10px;
   color: red;
+}
+
+.resetbutton {
+  margin-left: 70px;
 }
 
 .sign-up-legend {
@@ -41,4 +46,7 @@ div fieldset form button {
 .favorite-menu {
   margin-top: 20px;
   margin-bottom: 10px;
+}
+.warn_nosuch:hover {
+  color: red;
 }

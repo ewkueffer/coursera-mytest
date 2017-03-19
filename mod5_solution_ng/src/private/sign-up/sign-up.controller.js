@@ -38,6 +38,12 @@ function SignUpController( PrivateService, MenuService) {
     });
   }
 
+  $ctrl.reset = function () {
+    $ctrl.wrongshortname = false;
+    $ctrl.reqCompleted = false;  
+  }
+
+
 }
 
 })();

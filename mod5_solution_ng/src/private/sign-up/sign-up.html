@@ -53,18 +53,26 @@
           required
           pattern="(([A-Z]{1,2})([1-9]{1})([0-9]{0,1}))">
 
-          <span ng-if="regForm.menushortname.$invalid && regForm.menushortname.$touched && !ctrl.wrongshortname">
-            Must be a menu short name as C12, L1, SP7
+          <span ng-show="regForm.menushortname.$invalid && regForm.menushortname.$touched && !ctrl.wrongshortname">
+            Must be a menu short name as C12, L1, SP7 ...
           </span>
-          <span ng-if="regForm.menushortname.$touched && ctrl.wrongshortname">
+          <span class="warn_nosuch"
+            ng-show="regForm.menushortname.$valid && regForm.menushortname.$touched && ctrl.wrongshortname">
             No such menu number exists
           </span>
 
       </label> <br>
-      <button name="submitbutton"
-        ng-disabled="regForm.$invalid"
-        ng-click="ctrl.submit()">Submit</button>
-        <span ng-if="regForm.$submitted && !ctrl.wrongshortname && ctrl.reqCompleted">Your information has been saved</span>
+      <div>
+        <button
+            ng-disabled="regForm.$invalid || ctrl.reqCompleted"
+            ng-click="ctrl.submit()">Submit</button>
+        <button class="resetbutton"
+            ng-disabled="!regForm.$submitted"
+            ng-click="ctrl.reset()">Reset</button>
+            <!-- ng-click="regForm.menushortname.$setUntouched() -->
+      </div>
+      <div class="saved" ng-if="regForm.$submitted && !ctrl.wrongshortname
+          && ctrl.reqCompleted">Your information has been saved</div>
     </form>
   </fieldset>
 

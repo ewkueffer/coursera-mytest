@@ -40,8 +40,8 @@ describe('private', function () {
     userData = privateService.getUserData(testEmail);
     expect(userData.firstname).toEqual('Bob');
     userData = privateService.getUserData(aliceUserData.email);
-    expect(userData.firstname).toEqual('Alice');
-    expect(userData.phone).toEqual('556669999');
+    expect(userData.firstname).toEqual('Bob');
+    expect(userData.phone).toEqual('556661111');
   });
 
 
